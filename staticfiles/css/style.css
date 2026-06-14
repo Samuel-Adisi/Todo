@@ -1,130 +1,128 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f0f2f5;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #0f0f0f;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 40px 16px;
+  padding: 48px 16px;
 }
 
-.app-wrapper {
-  width: 100%;
-  max-width: 580px;
-}
+.app-wrapper { width: 100%; max-width: 560px; }
 
 .app-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 32px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  border: 1px solid #2a2a2a;
+  padding: 36px;
 }
 
 .app-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .app-header h1 {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #ffffff;
+  letter-spacing: -0.5px;
 }
 
 .task-count {
-  font-size: 13px;
-  color: #888;
-  background: #f0f2f5;
-  padding: 4px 10px;
+  font-size: 12px;
+  color: #555;
+  background: #252525;
+  border: 1px solid #2e2e2e;
+  padding: 4px 12px;
   border-radius: 20px;
+  font-weight: 500;
 }
 
 .add-form {
   display: flex;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .add-input {
   flex: 1;
-  padding: 11px 16px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
   font-size: 14px;
   outline: none;
+  background: #252525;
+  color: #fff;
   transition: border-color 0.2s;
-  color: #1a1a2e;
 }
 
-.add-input:focus { border-color: #6c63ff; }
+.add-input::placeholder { color: #444; }
+.add-input:focus { border-color: #444; }
 
 .add-btn {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 11px 18px;
-  background: #6c63ff;
-  color: #fff;
+  padding: 12px 18px;
+  background: #fff;
+  color: #0f0f0f;
   border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: opacity 0.15s;
   white-space: nowrap;
 }
 
-.add-btn:hover { background: #574fd6; }
+.add-btn:hover { opacity: 0.88; }
 .add-btn:active { transform: scale(0.97); }
 
-.todo-list { display: flex; flex-direction: column; gap: 10px; }
+.todo-list { display: flex; flex-direction: column; gap: 8px; }
 
 .todo-item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: #fafafa;
-  border: 1.5px solid #f0f0f0;
+  background: #222;
+  border: 1px solid #2a2a2a;
   border-radius: 12px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s;
 }
 
-.todo-item:hover {
-  border-color: #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.todo-item.completed { opacity: 0.55; }
+.todo-item:hover { border-color: #333; }
+.todo-item.completed { opacity: 0.4; }
 
 .custom-checkbox { display: flex; cursor: pointer; flex-shrink: 0; }
 .custom-checkbox input { display: none; }
 
 .checkmark {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #d0d0d0;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #444;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.15s;
 }
 
 .custom-checkbox input:checked + .checkmark {
-  background: #6c63ff;
-  border-color: #6c63ff;
+  background: #fff;
+  border-color: #fff;
 }
 
 .custom-checkbox input:checked + .checkmark::after {
   content: '';
-  width: 5px;
-  height: 9px;
-  border: 2px solid #fff;
+  width: 4px;
+  height: 8px;
+  border: 2px solid #0f0f0f;
   border-top: none;
   border-left: none;
   transform: rotate(45deg) translateY(-1px);
@@ -134,57 +132,55 @@ body {
 .todo-title {
   flex: 1;
   font-size: 14px;
-  color: #2d2d2d;
+  color: #e0e0e0;
   cursor: pointer;
+  font-weight: 400;
 }
 
-.completed .todo-title { text-decoration: line-through; color: #aaa; }
+.completed .todo-title { text-decoration: line-through; color: #444; }
 
-.rename-form {
-  flex: 1;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
+.rename-form { flex: 1; display: flex; gap: 6px; align-items: center; }
 
 .rename-input {
   flex: 1;
   padding: 6px 10px;
-  border: 1.5px solid #6c63ff;
+  border: 1px solid #444;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
-  color: #1a1a2e;
+  background: #2a2a2a;
+  color: #fff;
 }
 
 .rename-save-btn {
   padding: 6px 12px;
-  background: #6c63ff;
-  color: #fff;
+  background: #fff;
+  color: #0f0f0f;
   border: none;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .rename-cancel-btn {
   padding: 6px 12px;
-  background: #f0f0f0;
-  color: #555;
-  border: none;
+  background: #2a2a2a;
+  color: #888;
+  border: 1px solid #333;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
 }
 
-.todo-actions { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+.todo-actions { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
 
 .edit-btn, .delete-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -193,16 +189,10 @@ body {
   text-decoration: none;
 }
 
-.edit-btn { color: #6c63ff; }
-.edit-btn:hover { background: #f0eeff; }
+.edit-btn { color: #555; }
+.edit-btn:hover { background: #2a2a2a; color: #fff; }
+.delete-btn { color: #555; }
+.delete-btn:hover { background: #2a1515; color: #e74c3c; }
 
-.delete-btn { color: #e74c3c; }
-.delete-btn:hover { background: #fff0f0; }
-
-.empty-state {
-  text-align: center;
-  padding: 40px 20px;
-  color: #bbb;
-}
-
-.empty-state p { margin-top: 12px; font-size: 14px; }
+.empty-state { text-align: center; padding: 48px 20px; color: #333; }
+.empty-state p { margin-top: 12px; font-size: 13px; color: #444; }
