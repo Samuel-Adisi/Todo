@@ -104,6 +104,13 @@ body {
   border: none; border-radius: 8px; font-size: 13px; cursor: pointer;
 }
 
+.app-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 4px;
+}
+
 .rename-cancel-btn {
   padding: 6px 12px; background: #f0f0f0; color: #555;
   border: none; border-radius: 8px; font-size: 13px; cursor: pointer;
