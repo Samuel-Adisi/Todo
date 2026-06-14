@@ -35,5 +35,6 @@ def rename(request, todo_id):
     if new_title:
         todo.title = new_title
         todo.save()
+
         
     return redirect('todos:index')

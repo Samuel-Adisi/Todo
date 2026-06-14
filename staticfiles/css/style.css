@@ -1,8 +1,8 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #0f0f0f;
+  font-family: 'Georgia', serif;
+  background: #fdf6ee;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
@@ -13,10 +13,11 @@ body {
 .app-wrapper { width: 100%; max-width: 560px; }
 
 .app-card {
-  background: #1a1a1a;
-  border-radius: 20px;
-  border: 1px solid #2a2a2a;
+  background: #fffaf4;
+  border-radius: 24px;
+  border: 1.5px solid #f0e6d3;
   padding: 36px;
+  box-shadow: 0 8px 32px rgba(180,140,100,0.08);
 }
 
 .app-header {
@@ -24,105 +25,113 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px dashed #f0e6d3;
 }
 
 .app-header h1 {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.5px;
+  color: #3d2c1e;
+  letter-spacing: -0.3px;
 }
 
 .task-count {
   font-size: 12px;
-  color: #555;
-  background: #252525;
-  border: 1px solid #2e2e2e;
+  color: #a07850;
+  background: #fdf0e0;
+  border: 1px solid #f0e0c8;
   padding: 4px 12px;
   border-radius: 20px;
-  font-weight: 500;
+  font-family: -apple-system, sans-serif;
 }
 
 .add-form {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 24px;
 }
 
 .add-input {
   flex: 1;
   padding: 12px 16px;
-  border: 1px solid #2e2e2e;
-  border-radius: 12px;
+  border: 1.5px solid #e8d8c4;
+  border-radius: 14px;
   font-size: 14px;
   outline: none;
-  background: #252525;
-  color: #fff;
+  background: #fff;
+  color: #3d2c1e;
+  font-family: inherit;
   transition: border-color 0.2s;
 }
 
-.add-input::placeholder { color: #444; }
-.add-input:focus { border-color: #444; }
+.add-input::placeholder { color: #c4a882; }
+.add-input:focus { border-color: #c4845a; }
 
 .add-btn {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 12px 18px;
-  background: #fff;
-  color: #0f0f0f;
+  padding: 12px 20px;
+  background: #c4845a;
+  color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.15s;
+  transition: background 0.2s;
   white-space: nowrap;
+  font-family: -apple-system, sans-serif;
 }
 
-.add-btn:hover { opacity: 0.88; }
+.add-btn:hover { background: #a86b44; }
 .add-btn:active { transform: scale(0.97); }
 
-.todo-list { display: flex; flex-direction: column; gap: 8px; }
+.todo-list { display: flex; flex-direction: column; gap: 10px; }
 
 .todo-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
-  background: #222;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  transition: border-color 0.2s;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1.5px solid #f0e6d3;
+  border-radius: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.todo-item:hover { border-color: #333; }
-.todo-item.completed { opacity: 0.4; }
+.todo-item:hover {
+  border-color: #e0ccb4;
+  box-shadow: 0 2px 12px rgba(180,140,100,0.08);
+}
+
+.todo-item.completed { opacity: 0.5; }
 
 .custom-checkbox { display: flex; cursor: pointer; flex-shrink: 0; }
 .custom-checkbox input { display: none; }
 
 .checkmark {
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid #444;
-  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d4b896;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s;
+  transition: all 0.2s;
 }
 
 .custom-checkbox input:checked + .checkmark {
-  background: #fff;
-  border-color: #fff;
+  background: #c4845a;
+  border-color: #c4845a;
 }
 
 .custom-checkbox input:checked + .checkmark::after {
   content: '';
-  width: 4px;
-  height: 8px;
-  border: 2px solid #0f0f0f;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
   border-top: none;
   border-left: none;
   transform: rotate(45deg) translateY(-1px);
@@ -132,45 +141,48 @@ body {
 .todo-title {
   flex: 1;
   font-size: 14px;
-  color: #e0e0e0;
+  color: #3d2c1e;
   cursor: pointer;
-  font-weight: 400;
+  line-height: 1.5;
 }
 
-.completed .todo-title { text-decoration: line-through; color: #444; }
+.completed .todo-title { text-decoration: line-through; color: #c4a882; }
 
 .rename-form { flex: 1; display: flex; gap: 6px; align-items: center; }
 
 .rename-input {
   flex: 1;
   padding: 6px 10px;
-  border: 1px solid #444;
+  border: 1.5px solid #c4845a;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
-  background: #2a2a2a;
-  color: #fff;
+  background: #fff;
+  color: #3d2c1e;
+  font-family: inherit;
 }
 
 .rename-save-btn {
   padding: 6px 12px;
-  background: #fff;
-  color: #0f0f0f;
+  background: #c4845a;
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
+  font-family: -apple-system, sans-serif;
 }
 
 .rename-cancel-btn {
   padding: 6px 12px;
-  background: #2a2a2a;
-  color: #888;
-  border: 1px solid #333;
+  background: #f5ebe0;
+  color: #a07850;
+  border: 1px solid #e8d8c4;
   border-radius: 8px;
   font-size: 12px;
   cursor: pointer;
+  font-family: -apple-system, sans-serif;
 }
 
 .todo-actions { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
@@ -179,8 +191,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -189,10 +201,10 @@ body {
   text-decoration: none;
 }
 
-.edit-btn { color: #555; }
-.edit-btn:hover { background: #2a2a2a; color: #fff; }
-.delete-btn { color: #555; }
-.delete-btn:hover { background: #2a1515; color: #e74c3c; }
+.edit-btn { color: #c4a882; }
+.edit-btn:hover { background: #fdf0e0; color: #c4845a; }
+.delete-btn { color: #c4a882; }
+.delete-btn:hover { background: #fdecea; color: #c0392b; }
 
-.empty-state { text-align: center; padding: 48px 20px; color: #333; }
-.empty-state p { margin-top: 12px; font-size: 13px; color: #444; }
+.empty-state { text-align: center; padding: 48px 20px; color: #d4b896; }
+.empty-state p { margin-top: 12px; font-size: 13px; color: #c4a882; font-family: -apple-system, sans-serif; }
